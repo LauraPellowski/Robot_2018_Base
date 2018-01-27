@@ -17,6 +17,7 @@ void GrabLeft::Initialize()
 void GrabLeft::Execute()
 {
 	grabbarms->LeftIn();
+	SmartDashboard::PutBoolean("Grab Left", true);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -29,6 +30,7 @@ bool GrabLeft::IsFinished()
 void GrabLeft::End()
 {
 	grabbarms->LeftStop();
+	SmartDashboard::PutBoolean("Grab Left", false);
 }
 
 // Called when another command which requires one or more of the same
@@ -36,4 +38,5 @@ void GrabLeft::End()
 void GrabLeft::Interrupted()
 {
 	grabbarms->LeftStop();
+	SmartDashboard::PutBoolean("Grab Left", false);
 }
