@@ -10,14 +10,13 @@ GrabLeft::GrabLeft()
 // Called just before this Command runs the first time
 void GrabLeft::Initialize()
 {
-
+	SmartDashboard::PutBoolean("Grab Left", true);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void GrabLeft::Execute()
 {
 	grabbarms->LeftIn();
-	SmartDashboard::PutBoolean("Grab Left", true);
 }
 
 // Make this return true when this Command no longer needs to run execute()

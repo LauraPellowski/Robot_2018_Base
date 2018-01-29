@@ -18,6 +18,7 @@
 #include "Commands/ForkRaise.h"
 #include "Commands/ExampleCommand.h"
 #include "Commands/MyAutoCommand.h"
+#include "Commands/GrabLeft.h"//FIXME remove after test
 #include <ctre/Phoenix.h>
 
 #include "OI.h"
@@ -52,7 +53,9 @@ public:
 
 		m_chooser.AddDefault("Default Auto", &m_defaultAuto);
 		m_chooser.AddObject("My Auto", &m_myAuto);
+		//frc::SmartDashboard::init();
 		frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+		SmartDashboard::PutData("Grab Left Command", new GrabLeft()); //can run command on SmartDashboard
 
 		printf("Instantiating compressor object...\n");
 		compressor = new Compressor();
